@@ -1,7 +1,7 @@
 import React ,{useContext} from 'react'
 import {DataContext} from '../App'
 
-export default function ContextUser() {
+ function ContextUser() {
     const data = useContext(DataContext)
     console.log(data.str)
     return (
@@ -15,3 +15,17 @@ export default function ContextUser() {
         </div>
     )
 }
+
+function ContextHeader(){
+    return(
+        <ContextUser></ContextUser>
+    )
+}
+
+function ContextApp(){
+    return(
+        <ContextHeader></ContextHeader>
+    )
+}
+
+export default ContextApp
